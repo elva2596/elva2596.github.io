@@ -18,13 +18,13 @@ window.onload = function (){
         top,
         left;
 
-    if(clientY+offsetHeight>browserHeight){
+    if(clientY+offsetHeight>=browserHeight){
        top = clientY-offsetHeight
     }else{
       top = clientY
     }
 
-    if(clientX+offsetWidth>browserWidth){
+    if(clientX+offsetWidth>=browserWidth){
       left = clientX-offsetWidth
       console.log(left);
     }else{
