@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+body,ul,p{
+  margin:0;
+}
+ul{
+  padding:0;
+  list-style: none;
+}
+#click_region{
+  height: 116px;
+  line-height: 116px;
+  text-align: center;
+  font-size: 30px;
+  background:#f5f5f5;
+  margin:10px 30px;
+  border-radius: 8px;
+  border: 2px solid #d0d0d0;
+  cursor: default;
+}
+#menu{
+  width: 404px;
+  position: absolute;
+  background:#ffffff;
+  border: 2px solid #d0d0d0;
+  border-radius: 5px;
+  padding:10px 0;
+  z-index: 99999;
+  display: none;
+}
+#menu li{
+  padding:18px 40px;
+  font-size: 24px;
+  cursor:default;
+}
+#menu li:hover{
+  background:#d0d0d0;
+  opacity: 0.6;
+}
