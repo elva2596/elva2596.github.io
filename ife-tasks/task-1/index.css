@@ -24,7 +24,7 @@ body{
   display:flex;
 }
 .checkBox:checked+label,.radios:checked+label{
-   border:1px solid #d73d32;
+   /*border:1px solid #d73d32;*/
 }
 .checkBox:checked+label::after,.radios:checked+label::after{
   margin: auto;
@@ -74,7 +74,7 @@ input{
   background-position:-25px -32px;
 }
 .radioBox_sprit+label{
-  background-position: -24px -10px; 
+  background-position: -24px -10px;
 }
 .checkBox_sprit:checked+label{
   background-position: -60px -32px;
