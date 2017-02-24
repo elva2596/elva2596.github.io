@@ -13,9 +13,14 @@
   <li>menu item 2</li>
 </ul>
 <script>
-   document.oncontextmenu =function (){
-     alert('触发了');
-   }
+var oUl = document.getElementById('menu');
+  //  document.oncontextmenu =function (){
+  //    alert('触发了');
+  //  }
+   oUl.addEventlistener('context',function (){
+     alert('我是标准的')
+    return false
+   },false)
 </script>
 </body>
 </html>

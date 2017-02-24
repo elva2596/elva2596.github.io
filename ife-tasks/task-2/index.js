@@ -2,11 +2,12 @@ window.onload = function (){
   var oClick = document.getElementById('click_region'),
       oMenu = document.getElementById('menu'),
       aLi = oMenu.getElementsByTagName('li'),
-      browserHeight = document.documentElement.clientHeight,//浏览器视口的高度
-      browserWidth = document.documentElement.clientWidth; //浏览器视口的快读，不包括垂直滚动天的宽度
+      browserHeight = window.innerHeight,//浏览器视口的高度
+      browserWidth = window.innerWidth; //浏览器视口的快读，不包括垂直滚动天的宽度
 
   document.oncontextmenu = function (ev){
     oMenu.style.display = 'block';
+    document.body.style.overflow = 'hidden'
     var ev = ev||window.event,
         scrollTop = document.documentElement.scrollTop||document.body.scrollTop,
         scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft,
@@ -24,9 +25,8 @@ window.onload = function (){
       top = clientY
     }
 
-    if(clientX+offsetWidth>=browserWidth){
+    if(clientX+offsetWidth>=browserWidth+20){
       left = clientX-offsetWidth
-      console.log(left);
     }else{
       left = clientX
     }
@@ -38,6 +38,7 @@ window.onload = function (){
 
   // 取消自定义菜单
   document.onclick = function (){
+      document.body.style.overflowY = 'scroll'
       oMenu.style.display = 'none';
   }
 
