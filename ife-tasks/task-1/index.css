@@ -25,6 +25,7 @@ body{
 }
 .checkBox:checked+label,.radios:checked+label{
    border:1px solid #d73d32;
+   font-weight: 700;
 }
 .checkBox:checked+label::after,.radios:checked+label::after{
   margin: auto;
