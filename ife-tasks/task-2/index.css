@@ -9,12 +9,12 @@ ul{
   padding:0;
   list-style: none;
 }
-.left_bottom,.right_bottom{
+.left_bottom,.right_bottom,.tobottom{
   position: absolute;
   bottom: 0;
   cursor: default;
   font-size: 26px;
-  background: red;
+  /*background: red;*/
   z-index:1111;
 }
 .left_bottom{left:0}
@@ -29,6 +29,10 @@ ul{
   border-radius: 8px;
   border: 2px solid #d0d0d0;
   cursor: default;
+}
+.tobottom{
+width: 300px;
+left:500px;
 }
 #menu{
   width: 404px;

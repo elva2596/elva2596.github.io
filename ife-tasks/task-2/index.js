@@ -5,9 +5,9 @@ window.onload = function (){
       browserHeight = window.innerHeight,//浏览器视口的高度
       browserWidth = window.innerWidth; //浏览器视口的快读，不包括垂直滚动天的宽度
 
-  document.oncontextmenu = function (ev){
+  document.body.oncontextmenu = function (ev){
     oMenu.style.display = 'block';
-    document.body.style.overflow = 'hidden'
+    // document.body.style.overflow = 'hidden'
     var ev = ev||window.event,
         scrollTop = document.documentElement.scrollTop||document.body.scrollTop,
         scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft,
@@ -19,13 +19,13 @@ window.onload = function (){
         top,
         left;
 
-    if(clientY+offsetHeight>=browserHeight){
+    if(browserHeight-clientY<=offsetHeight){
        top = clientY-offsetHeight
     }else{
       top = clientY
     }
 
-    if(clientX+offsetWidth>=browserWidth+20){
+    if(browserHeight-clientX<=offsetWidth){
       left = clientX-offsetWidth
     }else{
       left = clientX
@@ -38,7 +38,7 @@ window.onload = function (){
 
   // 取消自定义菜单
   document.onclick = function (){
-      document.body.style.overflowY = 'scroll'
+      // document.body.style.overflowY = 'scroll'
       oMenu.style.display = 'none';
   }
 
