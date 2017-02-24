@@ -24,7 +24,7 @@ body{
   display:flex;
 }
 .checkBox:checked+label,.radios:checked+label{
-   /*border:1px solid #d73d32;*/
+   border:1px solid #d73d32;
 }
 .checkBox:checked+label::after,.radios:checked+label::after{
   margin: auto;
