@@ -24,7 +24,7 @@
 			// 判断相邻单词是否重复
 			oBtn1.addEventListener("click",function (){
 				var oText1 = oInp1.value.replace(/^\s+|\s+$/g,''),//先去除输入的整个字符串的前后空格
-					re = /\b([a-zA-Z]+)\s+\1\b/; //使用\b词边界(词边界是非\w)
+					re = /\b([a-zA-Z]+)[^\w]+\1\b/; //使用\b词边界(词边界是非\w)
 					alert(re.test(oText1));
 	/*
 \b 元字符匹配单词边界。（这里的单词指的是\w匹配的数字、字母、下划线 ：[a-zA-Z0-9]）
