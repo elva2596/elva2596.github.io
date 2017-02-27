@@ -52,16 +52,16 @@ p.observer = function (val){
 	return 
 }
 
-
-
 let data = {
-    user: {
+    data:{
+    	user: {
         name: "hello world",
         age: "24"
     },
     address: {
         city: "beijing"
     }
+    }
 };
 var app = new Observer(data);
-console.log(app.data.user);
+// console.log(app.data.user.name);

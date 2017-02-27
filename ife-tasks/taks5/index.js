@@ -1,33 +1,36 @@
-
-
+// 发布者
 function Observer(data){
 	this.data = data;
 	this.walk(data)
 }
-
+// 将原型赋值给一个变量
 var p = Observer.prototype;
 
-// 遍历
+// 遍历对象所有属性，包括子属性
 p.walk = function (obj){
-	var val,
-		_this = this;
+	var _this = this;
 	Object.keys(obj).forEach(function (key){
-		val = obj[key]
-		_this.observer(val)
-		_this.convert(key,val)
+		_this.observer(obj[key])
+		_this.convert(key,obj[key])
 	})
 }
 
 // 绑定getter 和setter
 p.convert = function (key,val){
 	//每次set函数调用的时候，触发notify
-	var dep = new Dep()  //处于闭包当中
+	var dep = new Dep()  //发布给订阅者
 	var _this = this;
 	Object.defineProperty(this.data,key,{
 		configurable:true,
 		enumarable:true,
 		get:function (){
 			console.log("你访问了"+key);
+
+			// Watcher的实例调用了getter
+			if(Dep.target){
+				dep.addSub(Dep.target)
+			}
+
 			return val
 		},
 		set:function (newVal){
@@ -40,28 +43,30 @@ p.convert = function (key,val){
 			val = newVal
 			// 如果设置的新值是一个对象，则递归它，加上set/get
 			_this.observer(newVal)
-			dep.notify()
+			dep.notify()//发布者发布到订阅中心
 		}
 	})
 }
-
+// 判断属性值是否是一个对象
 p.observer = function (val){
 	if(typeof val ==="object"){
-		return new Observer(val)
+		 new Observer(val)
 	}
-	return 
+}
+// 定义一个watcher
+p.$watcher = function (exp,cb){
+	new Watcher(this,exp,cb)
 }
 
-
-
 let data = {
-    user: {
-        name: "hello world",
-        age: "24"
-    },
-    address: {
-        city: "beijing"
-    }
+	user:{
+		name:'dailu',
+		age:25
+	}
 };
 var app = new Observer(data);
-console.log(app.data.user);
+ app.$watcher('age', function(age) {
+         console.log(`我的年纪变了，现在已经是：${age}岁了`)
+ });
+app.data.user.age = 100;
+// console.log(app.data.name);
