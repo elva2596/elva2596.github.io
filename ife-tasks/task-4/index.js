@@ -20,6 +20,7 @@ p.walk = function (obj){
 
 // 绑定getter 和setter
 p.convert = function (key,val){
+	var _this = this
 	Object.defineProperty(this.data,key,{
 		configurable:true,
 		enumarable:true,
@@ -37,10 +38,11 @@ p.convert = function (key,val){
 	})
 }
 
-p.observer = function (val){
-	if(typeof val ==="object"){
-		new Observer(val);
-	}
+p.observer = function (value){
+	if (!value || typeof value !== 'object') {
+    return
+  }
+  return new Observer(value)
 }
 let data = {
     user: {
