@@ -13,9 +13,7 @@ p.walk = function (obj){
 		_this = this;
 	Object.keys(obj).forEach(function (key){
 		val = obj[key]
-		if(typeof val==="object"){
-			new Observer(val)
-		}
+		_this.observer(val)
 		_this.convert(key,val)
 	})
 }
@@ -32,17 +30,18 @@ p.convert = function (key,val){
 		set:function (newVal){
 			console.log("你设置了"+key);
 			console.log("新的"+key+"="+newVal);
-
 			// 如果设置的新值是一个对象，则递归它，加上set/get
-			if(typeof newVal ==="object"){
-				new Observer(newVal);
-			}
-
+			_this.observer(newVal)
 			val = newVal
 		}
 	})
 }
 
+p.observer = function (val){
+	if(typeof val ==="object"){
+		new Observer(val);
+	}
+}
 let data = {
     user: {
         name: "hello world",
