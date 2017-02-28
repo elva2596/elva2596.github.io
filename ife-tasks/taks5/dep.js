@@ -2,6 +2,7 @@
 function Dep(){
 	this.subs = [] //存放订阅者的数组
 }
+Dep.target = null;//定义一个全局变量，用来判断是否是watcher调用了getter
 var s = Dep.prototype;
 // 把订阅者都存到数组里面
 s.addSub = function (sub){
@@ -18,4 +19,6 @@ s.notify = function (){
 		 */
 	})
 }
-Dep.target = null;//定义一个全局变量，用来判断是否是watcher调用了getter
+s.depend = function (){
+	Dep.target.addDep(this) //这个this指向Dep实例dep
+} 

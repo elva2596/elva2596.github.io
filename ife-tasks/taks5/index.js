@@ -1,4 +1,4 @@
-// 发布者
+// 发布者，对data做监听，提供了某个数据项变化的能力
 function Observer(data){
 	this.data = data;
 	this.walk(data)
@@ -10,25 +10,31 @@ var p = Observer.prototype;
 p.walk = function (obj){
 	var _this = this;
 	Object.keys(obj).forEach(function (key){
-		_this.observer(obj[key])
+
 		_this.convert(key,obj[key])
+
 	})
 }
 
 // 绑定getter 和setter
 p.convert = function (key,val){
 	//每次set函数调用的时候，触发notify
-	var dep = new Dep()  //发布给订阅者
+	var dep = new Dep()  //发布给订阅者,每一个属性拥有一个dep
 	var _this = this;
+	var child =_this.observer(val)
+	// console.log(val);
 	Object.defineProperty(this.data,key,{
 		configurable:true,
 		enumarable:true,
 		get:function (){
 			console.log("你访问了"+key);
+			// console.log(child);
+			// Watcher的实例调用了getter，将watcher加入到调度中心的数组里面
 
-			// Watcher的实例调用了getter
 			if(Dep.target){
-				dep.addSub(Dep.target)
+				
+				dep.depend();//收集依赖
+
 			}
 
 			return val
@@ -47,10 +53,10 @@ p.convert = function (key,val){
 		}
 	})
 }
-// 判断属性值是否是一个对象
+// 判断属性值是否是一个对象,如果是再深度监听
 p.observer = function (val){
 	if(typeof val ==="object"){
-		 new Observer(val)
+		return  new Observer(val)
 	}
 }
 // 定义一个watcher
@@ -59,14 +65,10 @@ p.$watcher = function (exp,cb){
 }
 
 let data = {
-	user:{
-		name:'dailu',
-		age:25
-	}
+	name:'dailu',
+	age:25
 };
 var app = new Observer(data);
  app.$watcher('age', function(age) {
          console.log(`我的年纪变了，现在已经是：${age}岁了`)
  });
-app.data.user.age = 100;
-// console.log(app.data.name);
