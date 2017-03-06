@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>电话博</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- <link rel="stylesheet" type="text/css" href="demo.css"> -->
+</head>
+<body>
+	<h1>电话簿</h1>
+	<div id='wrap'>
+		<div class="child create">
+		<h2 class="title">创建联系人</h2>
+			<form  autocomplete="off">
+				<div class="name">
+					<label>姓名：</label>
+					<div class="name_inp">
+						<input type="text" name="user_name" class="user_name" placeholder="请输入姓名">
+					</div>
+				</div>
+				<div class="tel">
+					<label>电话：</label>
+					<div class="tel_inp">
+						<input type="text" name="user_tel" placeholder="请输入电话号码" class="user_tel">
+					</div>
+				</div>
+				<div class="company">
+					<label>公司：</label>
+					<div class="company_inp">
+						<input type="text" name="user_company" placeholder="请输入公司名" class="user_company">
+					</div>
+				</div>
+				<div class="btn">
+					<button type="button" class="btnSave">新增记录</button>
+				</div>
+			</form>
+		</div>
+		<div class="child find">
+			<h2 >查找联系人</h2>
+			<form  autocomplete="off">
+				<div class="tel">
+					<label>电话：</label>
+					<div class="name_inp">
+						<input type="text" name="user_tel" class="findName" placeholder="请输入电话号码">
+					</div>
+				</div>
+				<div class="btn">
+					<button type="button" class="findOne">查找联系人</button>
+				</div>
+				<p class="showMsg">电话号<span class="telNumber">18642175656</span>的主人是：<span class="telName">代路</span></p>
+			</form>
+		</div>
+		<div class="child show">
+			<h2>显示所有联系人</h2>
+			<div class="btn last_btn">
+				<button type="button" class="showBtn">显示所有联系人</button>
+				<button type="button" class="hiddenBtn">隐藏所有联系人</button>
+			</div>
+			<table class="table" autocomplete="off" border="1">
+				<thead>
+					<tr>
+						<td>姓名</td>
+						<td>电话</td>
+						<td>公司</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+
+		</div>
+		
+	</div>
+	<script type="text/javascript" src='index.js'></script>
+
+</body>
+</html>

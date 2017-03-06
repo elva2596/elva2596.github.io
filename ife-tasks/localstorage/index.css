@@ -1,0 +1,88 @@
+html{
+	font-size: 10px;
+}
+body{
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+input{
+	/* border:none; */
+	outline: none;
+	padding: 0;
+}
+#wrap{
+	width: 1000px;
+	border: 1px solid black;
+	margin: 20px auto;
+	display: flex;
+}
+#wrap .child{
+	flex:1;
+	padding: 20px;
+}
+#wrap form{
+	display: flex;
+	flex-direction: column;
+
+	font-size: 1.6rem;
+}
+#wrap .create,#wrap .find{
+	border-right: 2px solid #d2d2d2;
+}
+.name,.tel,.company{
+	display: flex;
+	margin: 10px auto;
+}
+.btn{
+	margin: 10px 0px;
+	text-align: center;
+}
+.last_btn{
+	margin-top: 20px;
+}
+input{
+	font-size: 16px;
+	line-height: 20px;
+	padding:.2rem .4rem;
+}
+button{
+	border:none;
+	cursor: pointer;
+	width:120px;
+	border-radius: 5px;
+	padding: .8rem .6rem;
+	transition: all .4s;
+   	background-color: #f7f7f7;
+  	border:1px solid #d2d2d2;
+  	outline: none;
+}
+button:hover{
+	background-color: #555555;
+    color: #fff;
+}
+h1{
+	text-align: center;
+	font-size: 30px;
+}
+h2{
+	text-align: center;
+	font-size: 26px;
+}
+p{
+	text-align: center;
+}
+.showMsg{
+	display: none;
+}
+table{
+	border: 1px solid black;
+}
+.show{
+	font-size: 1.6rem;
+}
+td{
+	width: 10rem;
+	text-align: center;
+}
