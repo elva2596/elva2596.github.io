@@ -1,0 +1,36 @@
+*{
+	margin:0;
+	padding:0;
+}
+li{list-style: none}
+#wrap{
+	width:800px;
+	height:150px;
+	border: 1px solid black;
+	margin:200px auto;
+}
+.clear{
+	zoom:1;
+	content:'';
+	display:block;
+	clear:both;
+}
+#wrap li{
+	float:left;
+	width:100px;
+	height:150px;
+	position: relative;
+	overflow: hidden;
+}
+#wrap div{
+	width:100px;
+	height:300px;
+	position: absolute;
+	top:0;
+}
+#wrap img{
+	border:none;
+	width:100px;
+	height:150px;
+	float: left;
+}

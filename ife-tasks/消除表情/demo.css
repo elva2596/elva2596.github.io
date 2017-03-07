@@ -1,0 +1,42 @@
+*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#f1f1f1;
+			font-family:"微软雅黑";
+			font-size:16px;
+			user-select: none;
+		}
+		#alert{text-align:center;}
+		#box{
+			width:800px;
+			height:450px;
+			border:1px solid #066;
+			margin:20px auto 0;
+			position:relative;
+			top:0;
+			left:0;
+			background:#FFF;
+		}
+		#fraction{
+			width:130px;
+			border:1px solid #066;
+			position:absolute;
+			top:-1px;
+			left:-152px;
+			background:#ffc;
+			padding:10px;
+
+		}
+		#fraction p{
+			font-family:"微软雅黑";
+			font-size:16px;
+			line-height:30px;
+			text-align:center;
+		}
+		#box img{
+			position:absolute;
+			top:0;
+			left:0;
+		}
