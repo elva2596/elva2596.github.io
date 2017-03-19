@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC >
+<html style='height:100%'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>胡庆雁</title>
+<link rel="stylesheet" href="dist/css/index.css">
+<script type="text/javascript" src="dist/js/jquery.js"/></script>
+<script type="text/javascript">
+    $(function (){
+        function banner(){  
+                var bn_id = 0;
+                var bn_id2= 1;
+                var speed33=8000;
+                var qhjg = 1;
+                var MyMar33;
+                $("#banner .d1").hide();
+                $("#banner .d1").eq(0).fadeIn("slow");
+                if($("#banner .d1").length>1){
+                    function Marquee33(){
+                        bn_id2 = bn_id+1;
+                        if(bn_id2>$("#banner .d1").length-1)
+                        {
+                            bn_id2 = 0;
+                        }
+                        $("#banner .d1").eq(bn_id).css("z-index","2");
+                        $("#banner .d1").eq(bn_id2).css("z-index","1");
+                        $("#banner .d1").eq(bn_id2).show();
+                        $("#banner .d1").eq(bn_id).fadeOut("slow");
+                        bn_id=bn_id2;
+                    };
+                    MyMar33=setInterval(Marquee33,speed33);
+                    $(".newNav").hover(
+                        function(){
+                            $('.newNav').css('opacity',0.4);
+                        },
+                        function(){
+                            $('.newNav').css('opacity',0);
+                        }) 
+                      
+                    }
+                }
+                banner();
+            });
+    
+</script>
+</head>
+<body style='height:100%';>
+    <div id='new_nav'>
+        <div class="newNav">
+        <div class="title">
+            <div class="title1">
+                <div class="hqyen hqyen_en">
+                    <a href="index_en.html" id="hqyen" >HU QINGYAN</a>
+                </div>
+            </div>
+            <div class="tab">
+                <div class="news">
+                    <a href="news_en.html" id="news" >News</a>
+                </div>
+                <div class="news_border">  </div>
+                <div class="works">
+                    <a href="works_en.html" id="works">Works</a>
+                </div>
+                <div class="works_border"></div>
+                <div class="bio">
+                    <a href="bio_en.html" id="bio">Biography</a>
+                </div>
+                <div class="bio_border"></div>
+                <div class="exh">
+                    <a href="exh_en.html" id="exh">Exhibitions</a>
+                </div>
+                <div class="exh_border"></div>
+                <div class="pub">
+                    <a href="pub_en.html" id="pub">Publications</a>
+                </div>
+                <div class="pub_border"></div>
+                <div class="texts">
+                    <a href="texts_en.html" id="texts">Texts</a>
+                </div>
+                <div class="texts_border"></div>
+                <div class="cont">
+                    <a href="cont_en.html" id="cont">Contact</a>
+                </div>
+
+            </div>
+            <div class="cnen_en" style='margin-left: -12.3%'>
+                <div class="cn"><a href="index.html" id="cn" >中文</a> </div>
+                <div class="cnen_border"></div>
+                <div class="en"><a href="index_en.html" id="en" style="color: #7e7d7d">English</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div class="banner" id="banner" >
+        <div class="d1" style="background:url(img/index/1.jpg) center no-repeat;background-size:cover"></div>
+        <div class="d1" style="background:url(img/index/2.jpg) center no-repeat;background-size:cover"></div>
+        <div class="d1" style="background:url(img/index/3.jpg) center no-repeat;background-size:cover"></div>
+        <div class="d1" style="background:url(img/index/4.jpg) center no-repeat;background-size:cover"></div>
+        <div class="d1" style="background:url(img/index/5.jpg) center no-repeat;background-size:cover"></div>
+    </div>
+
+</body>
+</html>
